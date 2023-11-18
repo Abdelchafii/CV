@@ -80,7 +80,10 @@
                   </ul>
                 </nav>
               </div>
-              <div class="d-print-none"><a class="btn btn-outline-light btn-lg shadow-sm mt-1 me-3" href="Abdel Chafii - Resume.pdf" data-aos="fade-right" data-aos-delay="700">Download CV</a><a class="btn btn-info btn-lg shadow-sm mt-1" href="#contact" data-aos="fade-left" data-aos-delay="700">Contact me</a></div>
+              <div class="d-print-none">
+                <a class="btn btn-outline-light btn-lg shadow-sm mt-1 me-3" href="#" onclick="authenticateAndDownload('Abdel Chafii - Resume.pdf')" data-aos="fade-right" data-aos-delay="700">Download CV</a>
+                <a class="btn btn-info btn-lg shadow-sm mt-1" href="#contact" data-aos="fade-left" data-aos-delay="700">Contact me</a>
+              </div></a></div>
             </div>
           </div>
         </div>
@@ -439,5 +442,24 @@
     <script src="scripts/mdb.min.js?ver=1.2.1"></script>
     <script src="scripts/aos.js?ver=1.2.1"></script>
     <script src="scripts/main.js?ver=1.2.1"></script>
+    <script>
+      function authenticateAndDownload(filename) {
+        var username = prompt("Please enter your username:");
+        var password = prompt("Please enter your password:");
+    
+        if (username === "Abdel" && password === "1emuseR") {
+          // Authentication successful, initiate the file download
+          var link = document.createElement("a");
+          link.href = "https://abdelchafii.github.io/Resume-2023/Abdel%20Chafii%20-%20Resume.pdf" + filename;
+          link.download = filename;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        } else {
+          alert("Invalid username or password. Access denied!");
+        }
+      }
+    </script>
+    
   </body>
 </html>
